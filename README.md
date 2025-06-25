@@ -1,1 +1,1 @@
-Imagine having a readme.... couldn't be me.
+Imagine having a readme... couldn't be me.
