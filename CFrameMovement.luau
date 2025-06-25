@@ -1,6 +1,5 @@
 local UIS:UserInputService = game:GetService("UserInputService");
 local Player:Players = game:GetService("Players");
-local LocalPlayer:Player | Instance = Player.LocalPlayer or Player:WaitForChild("LocalPlayer");
 local SpeedIncrease:number = 1;
 
 
@@ -20,7 +19,7 @@ local function sendNotif()
 end
 
 
-UIS.InputBegan:Connect(function(input, processed)
+UIS.InputBegan:Connect(function(input:InputObject, processed:boolean)
 	if(processed)then
 		return
 	end
@@ -46,25 +45,25 @@ end)
 --pcall(function()
 pcall(function()
 	while task.wait() do
-		if LocalPlayer.Name == "Aphlx_9" and Player.LocalPlayer.Character then
+		if Player.LocalPlayer.Character then
 		local HumanoidRootPart = Player.LocalPlayer.Character:FindFirstChild("HumanoidRootPart");
 		print("running");
 			if(UIS:IsKeyDown(Enum.KeyCode.LeftShift)) then
 				if(UIS:IsKeyDown(Enum.KeyCode.W))then
 					HumanoidRootPart.CFrame *= CFrame.new(0,0,-(SpeedIncrease));
-					print("ForwardRunning");
+					--print("ForwardRunning");
 				end
 				if(UIS:IsKeyDown(Enum.KeyCode.S))then
 					HumanoidRootPart.CFrame *= CFrame.new(0,0,(SpeedIncrease));
-					print("BackwardRunning");
+					--print("BackwardRunning");
 				end
 				if(UIS:IsKeyDown(Enum.KeyCode.A)) then
 					HumanoidRootPart.CFrame *= CFrame.new(-(SpeedIncrease),0,0);
-					print("StrafingLeft");
+					--print("StrafingLeft");
 				end
 				if(UIS:IsKeyDown(Enum.KeyCode.D))then
 					HumanoidRootPart.CFrame *= CFrame.new((SpeedIncrease),0,0);
-					print("StrafingRight");
+					--print("StrafingRight");
 				end
 			end
 		end
